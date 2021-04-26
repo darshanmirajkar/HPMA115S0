@@ -82,7 +82,7 @@ int HPMA115S0::ReadCmdResp(unsigned char * dataBuf, unsigned int dataBufSize, un
   _serial.setTimeout(100);
   Serial.println("PS- Waiting for cmd resp...");
   if (_serial.readStringUntil(HPM_CMD_RESP_HEAD)) {
-    delay(10); //wait for the rest of the bytes to arrive
+    delay(5); //wait for the rest of the bytes to arrive
     respBuf[HPM_HEAD_IDX] = HPM_CMD_RESP_HEAD;
     respBuf[HPM_LEN_IDX] = _serial.read(); //Read the command length
 
